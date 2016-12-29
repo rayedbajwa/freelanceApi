@@ -1,0 +1,22 @@
+{
+  "name": "letme",
+  "description": "for just testing",
+  "main": "index.js",
+  "authors": [
+    "M. Rayed Bajwa <muhammadrayed_bajwa@optum.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/main/webapp/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.1",
+    "bootstrap-sass": "^3.3.7"
+  }
+}

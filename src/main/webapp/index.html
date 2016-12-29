@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <title>Frontend</title>
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/content/css/main.css">
+    <link rel="stylesheet" href="/content/css/vendor.css">
+    <!-- endinject -->
+      <style type="text/css">
+          [ng\:cloak], [ng-cloak], .ng-cloak {
+              display: none !important;
+          }
+      </style>
+  </head>
+
+  <body ng-app="hello">
+  <div class="container">
+      <h1>Users</h1>
+      {{user}}
+      <div ng-controller="home" ng-cloak class="ng-cloak">
+          <div ng-repeat="use in user">
+          <p>The ID is {{use.id}}</p>
+          <p>The email is {{use.email}}</p>
+          <p>The name is {{use.name}}</p>
+      </div>
+      </div>
+  </div>
+
+  <!-- bower:js -->
+
+  <script src="/bower_components/angular/angular.js"></script>
+
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+
+  <!-- endinject -->
+
+  <!-- inject:js -->
+
+  <script src="/app/main.js"></script>
+
+  <!-- endinject -->
+</body>
+</html>
