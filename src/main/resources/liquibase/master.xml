@@ -10,12 +10,8 @@
 
     <property name="autoIncrement" value="true" dbms="mysql,h2,postgresql,oracle"/>
 
-    <changeSet id="00000000000000" author="jhipster" dbms="postgresql,oracle">
-        <createSequence sequenceName="hibernate_sequence" startValue="1000" incrementBy="1"/>
-    </changeSet>
-
     <!--
-        JHipster core tables.
+        core tables.
         The initial schema has the '00000000000001' id, so that it is over-written if we re-generate it.
     -->
     <changeSet id="00000000000001" author="jhipster">
@@ -171,6 +167,40 @@
                                  referencedColumnNames="event_id"
                                  referencedTableName="jhi_persistent_audit_event"/>
 
+        <createTable tableName="tasks">
+            <column name="id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="type_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="varchar(255)"/>
+            <column  name="created_date" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column  name="expire_date" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column  name="budget" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column  name="street_add" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column  name="city_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column  name="country_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column  name="zip" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addPrimaryKey columnNames="id, name" tableName="tasks"/>
     </changeSet>
 
 </databaseChangeLog>
