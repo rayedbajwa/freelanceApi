@@ -1,7 +1,6 @@
-package com.letme.Users.repo;
+package com.letme.Tasks.repo;
 
-import com.letme.Users.entity.Tasks;
-import com.letme.Users.entity.UsersInfo;
+import com.letme.Tasks.entity.Tasks;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

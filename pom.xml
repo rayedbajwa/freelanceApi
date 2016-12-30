@@ -105,7 +105,6 @@
 					<propertyFile>src/main/resources/liquibase.properties</propertyFile>
 				</configuration>
 			</plugin>
-
 		</plugins>
 	</build>
 </project>

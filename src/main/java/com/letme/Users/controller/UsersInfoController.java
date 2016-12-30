@@ -20,7 +20,6 @@ import java.util.concurrent.atomic.AtomicLong;
 @RequestMapping("/api/usersInfo")
 @RestController
 public class UsersInfoController {
-    private static final String template = "Hello, %s!";
     private static final Logger log = LoggerFactory.getLogger(UsersInfoController.class);
     private final AtomicLong counter = new AtomicLong();
 

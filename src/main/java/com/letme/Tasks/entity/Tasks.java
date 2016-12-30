@@ -1,4 +1,4 @@
-package com.letme.Users.entity;
+package com.letme.Tasks.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

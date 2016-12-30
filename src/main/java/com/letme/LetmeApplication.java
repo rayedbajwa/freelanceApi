@@ -1,7 +1,9 @@
 package com.letme;
 
+import com.letme.Tasks.services.TaskService;
 import com.letme.Users.controller.UsersInfoController;
 
+import com.letme.Tasks.repo.TasksRepo;
 import com.letme.Users.repo.UsersInfoRepo;
 
 import com.letme.Users.services.UsersInfoService;
@@ -20,11 +22,12 @@ import javax.inject.Inject;
 @EnableAutoConfiguration
 @SpringBootApplication
 @EnableConfigurationProperties({LiquibaseProperties.class })
-public class LetmeApplication {
+public abstract class LetmeApplication implements TasksRepo{
 	private static final Logger log = LoggerFactory.getLogger(UsersInfoController.class);
 
 	@Inject
 	private UsersInfoService userService;
+
 	public static void main(String[] args) {
 		SpringApplication.run(LetmeApplication.class, args);
 	}
