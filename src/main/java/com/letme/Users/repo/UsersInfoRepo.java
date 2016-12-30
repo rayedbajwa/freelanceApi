@@ -12,6 +12,5 @@ import java.util.Optional;
  * Created by mbajwa11 on 12/23/16.
  */
 public interface UsersInfoRepo extends JpaRepository<UsersInfo, Long> {
-    public Optional<UsersInfo> findOneByName(String name);
-    public ArrayList<UsersInfo> findByName(String name);
+
 }

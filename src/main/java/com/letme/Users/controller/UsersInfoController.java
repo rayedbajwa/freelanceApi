@@ -17,14 +17,12 @@ import javax.inject.Inject;
 import java.util.concurrent.atomic.AtomicLong;
 
 
-@RequestMapping("/api/users")
+@RequestMapping("/api/usersInfo")
 @RestController
 public class UsersInfoController {
     private static final String template = "Hello, %s!";
     private static final Logger log = LoggerFactory.getLogger(UsersInfoController.class);
     private final AtomicLong counter = new AtomicLong();
-
-
 
     @Inject
     private UsersInfoService userService;
@@ -32,7 +30,7 @@ public class UsersInfoController {
     @RequestMapping(value = "delete/{name}",
             method = RequestMethod.DELETE)
     public ResponseEntity<Void> deleteByName(@PathVariable String name) {
-        log.debug("REST request to delete FaqSection : {}", name);
+        log.debug("REST request to delete Delete By name : {}", name);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Alert: ", "Deleted");
         headers.add("Params:", name.toString());
