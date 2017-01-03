@@ -16,7 +16,4 @@ import javax.transaction.Transactional;
 public class UsersInfoService {
     @Inject
     private static final Logger log = LoggerFactory.getLogger(UsersInfoService.class);
-
-
-
 }
