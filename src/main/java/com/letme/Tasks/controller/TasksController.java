@@ -30,25 +30,10 @@ public class TasksController {
     Date currDate = new Date();
     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 
-
     @RequestMapping(value = "/getall", method = RequestMethod.GET)
-    public Tasks getAll() throws Exception{
-        HashMap<String, String> forDTO = new HashMap();
-        forDTO.put("name", "Get some food");
-        forDTO.put("desc", "Buy a burger from McDonalds with meal.");
-        forDTO.put("created_date", "12-12-1990");
-        forDTO.put("type_id", "2");
-        forDTO.put("status", "1");
-        forDTO.put("country_id", "4");
-        forDTO.put("city_id", "234432");
-        forDTO.put("zip", "48188");
-        forDTO.put("street_add", "Bajwa wali gali");
-        forDTO.put("active", "1233");
-        forDTO.put("budget", "24454");
-        forDTO.put("expire_date", "12-12-2001");
-        Mapper convertTask = new Mapper();
-        Tasks tasks = convertTask.convertJsontoTask(forDTO);
-        return tasks;
+    public ResponseEntity<List<Tasks>> getAll() throws Exception{
+        List<Tasks> temp = taskService.getAll();
+        return new ResponseEntity<List<Tasks>>(temp, HttpStatus.OK);
     }
 
     @RequestMapping(value = "getbyid/{id}", method = RequestMethod.GET)
@@ -66,24 +51,28 @@ public class TasksController {
         return ResponseEntity.ok().headers(head).build();
     }
     /*
-                name:Very Good
-                desc:tyest
-                type_id:2
-                created_date:23/12/1990
-                expire_date:23/12/1991
-                budget:12
-                street_add:12 canton please
-                city_id:1
-                country_id:3
-                zip:48188
-                status:1
-                active true:
+              {
+                name:Very Good,
+                desc:tyest,
+                type_id:2,
+                created_date:23/12/1990,
+                expire_date:23/12/1991,
+                budget:12,
+                street_add:12 canton please,
+                city_id:1,
+                country_id:3,
+                zip:48188,
+                status:1,
+                active:true
+
+               }
     */
     @RequestMapping(value = "/",
             method = RequestMethod.POST,
             produces =  MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<?> addNew(@RequestBody Tasks task){
+            System.out.print(task);
             Tasks res = taskService.save(task);
             return new ResponseEntity<Tasks>(task, HttpStatus.OK);
     }
